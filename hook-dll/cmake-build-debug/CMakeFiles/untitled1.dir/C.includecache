@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/clang/untitled1/detours.h
+windows.h
+-
+strsafe.h
+-
+intsafe.h
+-
+crtdbg.h
+-
+strsafe.h
+-
+type_traits
+-
+imagehlp.h
+-
+dbghelp.h
+-
+stdio.h
+-
+limits.h
+-
+
+D:/clang/untitled1/library.c
+library.h
+D:/clang/untitled1/library.h
+Windows.h
+-
+detours.h
+D:/clang/untitled1/detours.h
+stdio.h
+-
+time.h
+-
+
+D:/clang/untitled1/library.h
+

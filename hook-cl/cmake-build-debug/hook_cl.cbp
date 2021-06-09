@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="hook_cl"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/clang/hook-cl/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/clang/hook-cl/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hook_cl">
+				<Option output="D:/clang/hook-cl/cmake-build-debug/hook_cl.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/clang/hook-cl/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.7.2\include\um"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 hook_cl"/>
+					<CompileFile command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hook_cl/fast">
+				<Option output="D:/clang/hook-cl/cmake-build-debug/hook_cl.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/clang/hook-cl/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="D:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.7.2\include\um"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="E:\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 hook_cl/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/clang/hook-cl/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\clang\hook-cl\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/clang/hook-cl/detours.lib">
+			<Option target="hook_cl"/>
+		</Unit>
+		<Unit filename="D:/clang/hook-cl/main.c">
+			<Option target="hook_cl"/>
+		</Unit>
+		<Unit filename="D:/clang/hook-cl/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

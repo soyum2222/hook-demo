@@ -1,0 +1,3 @@
+D:/clang/hook-cl/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/clang/hook-cl/cmake-build-debug/CMakeFiles/hook_cl.dir
+D:/clang/hook-cl/cmake-build-debug/CMakeFiles/rebuild_cache.dir

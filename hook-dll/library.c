@@ -14,26 +14,38 @@ int WINAPI NEW_MessageBoxW(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uT
     int ret = OLD_MessageBoxW(hWnd, L"test3", L"test3", uType);
     return ret;
 }
+
+
 FILE *f;
+HWND hwnd;
 
 BOOL WINAPI NEW_TextOutA(HDC hdc,  int x,  int y,  LPCSTR lpString,  int c)
 {
 
+    PAINTSTRUCT     ps ;
     OLD_TextOutA(hdc,x,y,lpString,c);
-    char str_x[10];
 
-    sprintf(str_x,"x: %d\n",x);
-    fputs(str_x,f);
-
-    char str_y[10];
-    sprintf(str_y,"y: %d\n",y);
-    fputs(str_y,f);
-
-    fputs(lpString,f);
-
-    fputc('\n',f);
-
-    fputs("---------------------\n",f);
+    if (hwnd !=0){
+        if (x==3){
+            hwnd = BeginPaint ( hwnd, &ps ) ;
+            OLD_TextOutA(hwnd,x,y,lpString,c);
+            hwnd= EndPaint(hwnd,&ps);
+        }
+    }
+//    char str_x[10];
+//
+//    sprintf(str_x,"x: %d\n",x);
+//    fputs(str_x,f);
+//
+//    char str_y[10];
+//    sprintf(str_y,"y: %d\n",y);
+//    fputs(str_y,f);
+//
+//    fputs(lpString,f);
+//
+//    fputc('\n',f);
+//
+//    fputs("---------------------\n",f);
 }
 
 
@@ -130,7 +142,6 @@ DWORD WINAPI Proc1(LPVOID lpParameter)
 
     RegisterClass(&wndcls);
 
-    HWND hwnd;
     hwnd = CreateWindow("firstwind", "blueboy", WS_OVERLAPPEDWINDOW, 500, 200, 600, 400, NULL,
                         NULL, (HINSTANCE)ben, NULL);
 
@@ -175,6 +186,7 @@ LRESULT CALLBACK WinSunProc(
             hDC=BeginPaint(hwnd,&ps);
             TextOut(hDC,0,0,"blueboy",strlen("blueboy"));
             EndPaint(hwnd,&ps);
+//            InvalidateRect( hWnd, nullptr, TRUE );
             break;
         case WM_CLOSE:
             if(IDYES==MessageBox(hwnd,"是否真的结束?","message",MB_YESNO))
